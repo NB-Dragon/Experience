@@ -2,7 +2,7 @@
 - 操作系统
 > Windows
 
-- 技术应用
+- 技术/框架应用
 > Window Builder
 
 - 涉及编程语言
@@ -25,7 +25,7 @@
 - 操作系统
 > Ubuntu 16.04 LTS
 
-- 技术应用
+- 技术/框架应用
 > OpenCV/Caffe/Qt
 
 - 涉及编程语言
@@ -50,7 +50,7 @@
 - 操作系统
 > Ubuntu 16.04 LTS
 
-- 技术应用
+- 技术/框架应用
 > A-Fast-RCNN/Caffe/OpenCV
 
 - 涉及编程语言
