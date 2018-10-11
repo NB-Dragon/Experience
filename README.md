@@ -15,4 +15,4 @@
 > - 分别导出模型的倒数第二个全连接层数据，进行迁移训练，提高图像识别的mAP
 
 - 项目成果预览
-![遥感飞机图像识别](Image\remotePlane.png)
+![遥感飞机图像识别](Image/remotePlane.png)
