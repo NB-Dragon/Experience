@@ -7,10 +7,31 @@
 
 # 安卓开发篇
 ## 红包巡警
+- 开发所用系统
+> Ubuntu 16.04 LTS
+
+- 技术/框架应用
+> Accseeibility Service/Gson/HttpURLConnection
+
+- 涉及编程语言
+> Java/XML
+
+- 开发周期
+> 30天
+
+- 项目开发内容
+> - 
+> - 
+> - 
+> - 
+> - 
+
+- 项目成果预览
+![文本属性及关系标注](Image/textAnnotation.png)
 
 # 软件工具篇
 ## 文本属性及关系标注
-- 操作系统
+- 开发所用系统
 > Windows
 
 - 技术/框架应用
@@ -34,7 +55,7 @@
 
 # 机器学习篇
 ## 手写汉字识别
-- 操作系统
+- 开发所用系统
 > Ubuntu 16.04 LTS
 
 - 技术/框架应用
@@ -59,7 +80,7 @@
 ![手写汉字识别](Image/handWriteCharacter.png)
 
 ## 遥感飞机图像识别
-- 操作系统
+- 开发所用系统
 > Ubuntu 16.04 LTS
 
 - 技术/框架应用
