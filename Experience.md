@@ -31,8 +31,8 @@
 > - 用户可以手动检测最新版本并下载更新
 
 - 项目成果预览
-![红包巡警菜单页](Image/1.png)
-![红包巡警配置页](Image/1.png)
+![红包巡警菜单页](Image/RedPacketPolice_1.png)
+![红包巡警配置页](Image/RedPacketPolice_2.png)
 
 # 软件工具篇
 ## 文本属性及关系标注
