@@ -37,7 +37,7 @@
 > Windows
 
 - 技术/框架应用
-> SQL Server/JavaBean/FontAwesome/Bootstrap
+> SQL Server/JavaBean/Python爬虫/FontAwesome/Bootstrap
 
 - 涉及编程语言
 > Java/SQL/Python/HTML/CSS/JS
