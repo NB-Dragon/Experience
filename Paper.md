@@ -61,3 +61,67 @@
 ## 4.4 Using Semantic Soft
 &ensp;&ensp;Segments for Image Editing We demonstrate several use cases of our soft segments for targeted image editing and compositing in Figure 14. Figure 14(1,3,4,7) show compositing results where we estimated the layer colors for our segments using closed-form layer color estimation [Levin et al. 2008a].  
 &ensp;&ensp;Notice the natural soft transitions between the selected foreground layers and the novel background. The soft segments can also be used for targeted image edits where they are used to define masks for specific adjustment layers such as adding motion blur to the train in (2), color grading the people and the backgrounds separately in (5,6) and separate stylization of the hot-air balloon, sky, terrain and the person in (8). While these edits can be done via user-drawn masks or natural matting algorithms, our representation provides a convenient intermediate image representation to make the targeted edits effortless for the artist.  
+# 5 LIMITATIONS AND FUTURE WORK
+&ensp;&ensp;While we are able to generate accurate soft segmentations of images, in our prototype implementation our solvers are not optimized for speed. As a result, our runtime for a 640 × 480 image lies between 3 and 4 minutes. The efficiency of our method can be optimized in several ways, such as multi-scale solvers, but an efficient implementation of linear solvers and eigendecomposition lies beyond the scope of our paper.  
+&ensp;&ensp;In the constrained sparsification step, we generate around 15-25 segments, which are then grouped using the feature vectors into 5.  
+&ensp;&ensp;The number of layers was set via empirical observations, and in some cases, an object may be divided into several layers. While this does not affect the applicability of our method as combining those layers in editing is trivial, more sophisticated ways of grouping the layers such as through recognition and classification can be devised.  
+&ensp;&ensp;Our method does not generate separate layers for different instances of the same class of objects. This is due to our feature vectors, which does not provide instance-aware semantic information. Our soft segmentation formulation, however, is agnostic to the semantic features. Hence, a more advanced feature generator would make it possible to generate instance-level soft segmentation results when combined with a better-fitting segment-grouping strategy.  
+&ensp;&ensp;We have shown several results from natural matting datasets.  
+&ensp;&ensp;However, it should be noted that we do not aim to solve the natural matting problem in general. Natural matting is a mature field with many specific challenges, such as generating accurate mattes around very similarly-colored foreground and background regions, and state-of-the-art methods depend on the color distributions of the two regions to increase performance around such areas. As Figure 15 demonstrates, our method may fail at the initial constrained sparsification step when the object colors are very similar, or the grouping of soft segments may fail due to unreliable semantic feature vectors around large transition regions.  
+# 6 CONCLUSION
+We have proposed a method that generates soft segments that correspond to semantically meaningful regions in the image by fusing the high-level information from a neural network with low-level image features fully automatically. We have shown that by carefully defining affinities between different regions in the image, the soft segments with the semantic boundaries can be revealed by spectral analysis of the constructed Laplacian matrix. The proposed relaxed sparsification method for the soft segments can generate accurate soft transitions while also providing a sparse set of layers. We have demonstrated that while semantic segmentation and spectral soft segmentation methods fail to provide layers that are accurate enough for image editing tasks, our soft segments provide a convenient intermediate image representation that makes several targeted image editing tasks trivial, which otherwise require the manual labor of a skilled artist.  
+# ACKNOWLEDGMENTS
+&ensp;&ensp;We would like to thank Tunç Ozan Aydın and Adrien Bousseau for their feedback on the text, and James Minor for the voice-over of the accompanying video.  
+&ensp;&ensp;Y. Aksoy and T.-H. Oh were supported by QCRI-CSAIL Computer Science Research Program at MIT.  
+# REFERENCES
+R. Achanta, A. Shaji, K. Smith, A. Lucchi, P. Fua, and S. Süsstrunk. 2012. SLIC Superpixels Compared to State-of-the-Art Superpixel Methods. IEEE Trans. Pattern Anal. Mach.  
+&ensp;&ensp;Intell. 34, 11 (2012), 2274–2282.  
+&ensp;&ensp;Yağız Aksoy, Tunç Ozan Aydın, and Marc Pollefeys. 2017a. Designing Effective InterPixel Information Flow for Natural Image Matting. In Proc. CVPR.  
+&ensp;&ensp;Yağız Aksoy, Tunç Ozan Aydın, Marc Pollefeys, and Aljoša Smolić. 2016. Interactive High-Quality Green-Screen Keying via Color Unmixing. ACM Trans. Graph. 35, 5 (2016), 152:1–152:12.  
+&ensp;&ensp;Yağız Aksoy, Tunç Ozan Aydın, Aljoša Smolić, and Marc Pollefeys. 2017b. UnmixingBased Soft Color Segmentation for Image Manipulation. ACM Trans. Graph. 36, 2 (2017), 19:1–19:19.  
+&ensp;&ensp;Xiaobo An and Fabio Pellacini. 2008. AppProp: All-pairs Appearance-space Edit Propagation. ACM Trans. Graph. 27, 3 (2008), 40:1–40:9.  
+&ensp;&ensp;R. Barrett, M. Berry, T. Chan, J. Demmel, J. Donato, J. Dongarra, V. Eijkhout, R. Pozo, C.  
+&ensp;&ensp;Romine, and H. van der Vorst. 1994. Templates for the Solution of Linear Systems:
+Building Blocks for Iterative Methods. SIAM.  
+&ensp;&ensp;Gedas Bertasius, Jianbo Shi, and Lorenzo Torresani. 2015. High-for-low and low-forhigh: Efficient boundary detection from deep object features and its applications to high-level vision. In Proc. ICCV.  
+&ensp;&ensp;Gedas Bertasius, Jianbo Shi, and Lorenzo Torresani. 2016. Semantic Segmentation with Boundary Neural Fields. In Proc. CVPR.  
+&ensp;&ensp;V. Bychkovsky, S. Paris, E. Chan, and F. Durand. 2011. Learning Photographic Global Tonal Adjustment with a Database of Input/Output Image Pairs. In Proc. CVPR.  
+&ensp;&ensp;Holger Caesar, Jasper Uijlings, and Vittorio Ferrari. 2016. COCO-Stuff: Thing and Stuff Classes in Context. arXiv:1612.03716 [cs.CV] (2016).  
+&ensp;&ensp;Liang-Chieh Chen, George Papandreou, Iasonas Kokkinos, Kevin Murphy, and Alan L Yuille. 2017. DeepLab: Semantic Image Segmentation with Deep Convolutional Nets, Atrous Convolution, and Fully Connected CRFs. IEEE Trans. Pattern Anal. Mach.  
+&ensp;&ensp;Intell. (2017).  
+&ensp;&ensp;Qifeng Chen, Dingzeyu Li, and Chi-Keung Tang. 2013. KNN Matting. IEEE Trans.  
+&ensp;&ensp;Pattern Anal. Mach. Intell. 35, 9 (2013), 2175–2188.  
+&ensp;&ensp;Xiaowu Chen, Dongqing Zou, Qinping Zhao, and Ping Tan. 2012. Manifold Preserving Edit Propagation. ACM Trans. Graph. 31, 6 (2012), 132:1–132:7.  
+&ensp;&ensp;Yuki Endo, Satoshi Iizuka, Yoshihiro Kanamori, and Jun Mitani. 2016. DeepProp:
+Extracting Deep Features from a Single Image for Edit Propagation. Comput. Graph.  
+&ensp;&ensp;Forum 35, 2 (2016), 189–201.  
+&ensp;&ensp;D. Eynard, A. Kovnatsky, and M. M. Bronstein. 2014. Laplacian colormaps: a framework for structure-preserving color transformations. Comput. Graph. Forum 33, 2 (2014), 215–224.  
+&ensp;&ensp;H. Farid and E. P. Simoncelli. 2004. Differentiation of discrete multidimensional signals.  
+&ensp;&ensp;IEEE Trans. Image Process. 13, 4 (2004), 496–508.  
+&ensp;&ensp;Alireza Fathi, Zbigniew Wojna, Vivek Rathod, Peng Wang, Hyun Oh Song, Sergio Guadarrama, and Kevin P. Murphy. 2017. Semantic Instance Segmentation via Deep Metric Learning. arXiv:1703.10277 [cs.CV] (2017).  
+&ensp;&ensp;Bharath Hariharan, Pablo Arbeláez, Ross Girshick, and Jitendra Malik. 2015. Hypercolumns for object segmentation and fine-grained localization. In Proc. CVPR.  
+&ensp;&ensp;Kaiming He, Georgia Gkioxari, Piotr Dollar, and Ross Girshick. 2017. Mask R-CNN. In Proc. ICCV.  
+&ensp;&ensp;Kaiming He, Jian Sun, and Xiaoou Tang. 2013. Guided Image Filtering. IEEE Trans.  
+&ensp;&ensp;Pattern Anal. Mach. Intell. 35, 6 (2013), 1397–1409.  
+&ensp;&ensp;Elad Hoffer and Nir Ailon. 2015. Deep metric learning using triplet network. In International Workshop on Similarity-Based Pattern Recognition.  
+&ensp;&ensp;Anat Levin, Dani Lischinski, and Yair Weiss. 2008a. A Closed-Form Solution to Natural Image Matting. IEEE Trans. Pattern Anal. Mach. Intell. 30, 2 (2008), 228–242.  
+&ensp;&ensp;Anat Levin, Alex Rav-Acha, and Dani Lischinski. 2008b. Spectral Matting. IEEE Trans.  
+&ensp;&ensp;Pattern Anal. Mach. Intell. 30, 10 (2008), 1699–1712.  
+&ensp;&ensp;Y. Li, E. Adelson, and A. Agarwala. 2008. ScribbleBoost: Adding Classification to EdgeAware Interpolation of Local Image and Video Adjustments. Comput. Graph. Forum 27, 4 (2008), 1255–1264.  
+&ensp;&ensp;Tsung-Yi Lin, Michael Maire, Serge Belongie, James Hays, Pietro Perona, Deva Ramanan, Piotr Dollár, and C Lawrence Zitnick. 2014. Microsoft COCO: Common objects in context. In Proc. ECCV.  
+&ensp;&ensp;Tae-Hyun Oh, Kyungdon Joo, Neel Joshi, Baoyuan Wang, In So Kweon, and Sing Bing Kang. 2017. Personalized Cinemagraphs Using Semantic Understanding and Collaborative Learning. In Proc. ICCV.  
+&ensp;&ensp;S. Qin, S. Kim, and R. Manduchi. 2017. Automatic skin and hair masking using fully convolutional networks. In Proc. ICME.  
+&ensp;&ensp;Wenqi Ren, Jinshan Pan, Xiaochun Cao, and Ming-Hsuan Yang. 2017. Video Deblurring via Semantic Segmentation and Pixel-Wise Non-Linear Kernel. In Proc. ICCV.  
+&ensp;&ensp;Christoph Rhemann, Carsten Rother, Jue Wang, Margrit Gelautz, Pushmeet Kohli, and Pamela Rott. 2009. A Perceptually Motivated Online Benchmark for Image Matting.  
+&ensp;&ensp;In Proc. CVPR.  
+&ensp;&ensp;Xiaoyong Shen, Xin Tao, Hongyun Gao, Chao Zhou, and Jiaya Jia. 2016. Deep Automatic Portrait Matting. In Proc. ECCV.  
+&ensp;&ensp;D. Singaraju and R. Vidal. 2011. Estimation of Alpha Mattes for Multiple Image Layers.  
+&ensp;&ensp;IEEE Trans. Pattern Anal. Mach. Intell. 33, 7 (2011), 1295–1309.  
+&ensp;&ensp;Kihyuk Sohn. 2016. Improved deep metric learning with multi-class N-pair loss objective.  
+&ensp;&ensp;In Proc. NIPS.  
+&ensp;&ensp;Yu-Wing Tai, Jiaya Jia, and Chi-Keung Tang. 2007. Soft Color Segmentation and Its Applications. IEEE Trans. Pattern Anal. Mach. Intell. 29, 9 (2007), 1520–1537.  
+&ensp;&ensp;Jianchao Tan, Jyh-Ming Lien, and Yotam Gingold. 2016. Decomposing Images into Layers via RGB-space Geometry. ACM Trans. Graph. 36, 1 (2016), 7:1–7:14.  
+&ensp;&ensp;Ning Xu, Brian Price, Scott Cohen, and Thomas Huang. 2017. Deep Image Matting. In Proc. CVPR.  
+&ensp;&ensp;Hengshuang Zhao, Jianping Shi, Xiaojuan Qi, Xiaogang Wang, and Jiaya Jia. 2017.  
+&ensp;&ensp;Pyramid Scene Parsing Network. In Proc. CVPR.  
+&ensp;&ensp;Received January 2018; final version May 2018; accepted May 2018
