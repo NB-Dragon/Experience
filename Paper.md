@@ -74,7 +74,7 @@ We have proposed a method that generates soft segments that correspond to semant
 &ensp;&ensp;We would like to thank Tunç Ozan Aydın and Adrien Bousseau for their feedback on the text, and James Minor for the voice-over of the accompanying video.  
 &ensp;&ensp;Y. Aksoy and T.-H. Oh were supported by QCRI-CSAIL Computer Science Research Program at MIT.  
 # REFERENCES
-R. Achanta, A. Shaji, K. Smith, A. Lucchi, P. Fua, and S. Süsstrunk. 2012. SLIC Superpixels Compared to State-of-the-Art Superpixel Methods. IEEE Trans. Pattern Anal. Mach.  
+&ensp;&ensp;R. Achanta, A. Shaji, K. Smith, A. Lucchi, P. Fua, and S. Süsstrunk. 2012. SLIC Superpixels Compared to State-of-the-Art Superpixel Methods. IEEE Trans. Pattern Anal. Mach.  
 &ensp;&ensp;Intell. 34, 11 (2012), 2274–2282.  
 &ensp;&ensp;Yağız Aksoy, Tunç Ozan Aydın, and Marc Pollefeys. 2017a. Designing Effective InterPixel Information Flow for Natural Image Matting. In Proc. CVPR.  
 &ensp;&ensp;Yağız Aksoy, Tunç Ozan Aydın, Marc Pollefeys, and Aljoša Smolić. 2016. Interactive High-Quality Green-Screen Keying via Color Unmixing. ACM Trans. Graph. 35, 5 (2016), 152:1–152:12.  
