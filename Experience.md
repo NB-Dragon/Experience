@@ -70,10 +70,10 @@
 > Ubuntu 16.04 LTS
 
 - 技术/框架应用
-> Accessibility Service/Gson/HttpURLConnection
+> MySQL/Accessibility Service/Gson/HttpURLConnection
 
 - 涉及编程语言
-> MySQL/Java/PHP/XML
+> SQL/Java/PHP/XML
 
 - 开发周期
 > 30天
