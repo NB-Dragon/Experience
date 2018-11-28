@@ -7,7 +7,7 @@
 > Ubuntu 18.04 LTS
 
 - 技术/框架应用
-> Mysql/JudgeServer/Redis/FontAwesome
+> MySQL/JudgeServer/Redis/FontAwesome
 
 - 涉及编程语言
 > PHP/SQL/Shell/HTML/CSS/JS
@@ -73,7 +73,7 @@
 > Accessibility Service/Gson/HttpURLConnection
 
 - 涉及编程语言
-> Java/PHP/XML
+> MySQL/Java/PHP/XML
 
 - 开发周期
 > 30天
